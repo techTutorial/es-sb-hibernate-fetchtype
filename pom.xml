@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.javasampleapproach.hibernate.fetchtype</groupId>
-	<artifactId>SpringHibernateFetchType</artifactId>
+	<artifactId>es-sb-hibernate</artifactId>
 	<version>0.0.1</version>
 	<packaging>jar</packaging>
 
-	<name>SpringHibernateFetchType</name>
-	<description>SpringHibernateFetchType</description>
+	<name>es-sb-hibernate</name>
+	<description>es-sb-hibernate</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
