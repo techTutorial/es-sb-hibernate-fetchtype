@@ -1,5 +1,6 @@
 package com.javasampleapproach.hibernate.fetchtype.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -12,16 +13,19 @@ import javax.persistence.Table;
 import org.json.JSONObject;
 
 @Entity
-@Table(name="product")
+@Table(name="PRODUCT_ENTITY")
 public class Product{
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "ID_PRODUCT")
 	private int id;
-    private String name;
+    
+	@Column(name = "NAME_PRODUCT")
+	private String name;
     
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "company_id")
+    @JoinColumn(name = "ID_COMPANY")
     private Company company;
     
     public Product(){

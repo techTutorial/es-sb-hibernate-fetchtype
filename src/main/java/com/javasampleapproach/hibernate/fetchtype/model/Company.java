@@ -3,6 +3,7 @@ package com.javasampleapproach.hibernate.fetchtype.model;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -15,11 +16,15 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 @Entity
-@Table(name="company")
+@Table(name="COMPANY_ENTITY")
 public class Company{
+	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="ID_COMPANY")
 	private int id;
+	
+	@Column(name="NAME_COMPANY")
     private String name;
     
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
