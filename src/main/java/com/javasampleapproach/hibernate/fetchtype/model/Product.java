@@ -13,7 +13,7 @@ import javax.persistence.Table;
 import org.json.JSONObject;
 
 @Entity
-@Table(name="PRODUCT_ENTITY")
+@Table(name="ES_ACCESSORIES")
 public class Product{
 	
 	@Id

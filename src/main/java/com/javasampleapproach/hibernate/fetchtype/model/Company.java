@@ -16,7 +16,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 @Entity
-@Table(name="COMPANY_ENTITY")
+@Table(name="ES_PRODUCT")
 public class Company{
 	
 	@Id
