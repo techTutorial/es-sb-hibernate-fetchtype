@@ -29,7 +29,7 @@ public class SpringHibernateFetchType implements CommandLineRunner{
     
     @Override
     public void run(String... arg0) throws Exception {
-    	clearData();
+    	//clearData();
     	saveData();
     	showData();
     }
@@ -42,37 +42,38 @@ public class SpringHibernateFetchType implements CommandLineRunner{
     
     private void saveData(){
     	out.println("\n\n=================== Save DATA =======================");
-    	EsAccessoriesEntity iphone7 = new EsAccessoriesEntity("Iphone 7");
-        EsAccessoriesEntity iPadPro = new EsAccessoriesEntity("IPadPro");
+    	EsAccessoriesEntity access11 = new EsAccessoriesEntity("ACCESS-11");
+        EsAccessoriesEntity access12 = new EsAccessoriesEntity("ACCESS-12");
         
-        EsAccessoriesEntity galaxyJ7 = new EsAccessoriesEntity("GalaxyJ7");
-        EsAccessoriesEntity galaxyTabA = new EsAccessoriesEntity("GalaxyTabA");
+        EsAccessoriesEntity access21 = new EsAccessoriesEntity("ACCESS-21");
+        EsAccessoriesEntity access22 = new EsAccessoriesEntity("ACCESS-22");
          
-        EsProductEntity apple = new EsProductEntity("Apple");
-        EsProductEntity samsung = new EsProductEntity("Samsung");
+        EsProductEntity prod11 = new EsProductEntity("PROD-11");
+        EsProductEntity prod21 = new EsProductEntity("PROD-21");
         
         // set product for products
-        iphone7.setEsProductEntity(apple);
-        iPadPro.setEsProductEntity(apple);
+        access11.setEsProductEntity(prod11);
+        access12.setEsProductEntity(prod11);
         
-        galaxyJ7.setEsProductEntity(samsung);
-        galaxyTabA.setEsProductEntity(samsung);
+        access21.setEsProductEntity(prod21);
+        access22.setEsProductEntity(prod21);
         
         // save products
-        prodService.save(apple);
-        prodService.save(samsung);
+        prodService.save(prod11);
+        prodService.save(prod21);
          
         // save accessories
-        accessService.save(iphone7);
-        accessService.save(iPadPro);
+        accessService.save(access11);
+        accessService.save(access12);
         
-        accessService.save(galaxyJ7);
-        accessService.save(galaxyTabA);
+        accessService.save(access21);
+        accessService.save(access22);
     }
     
     private void showData(){
     	out.println("\n\n=================== Products =======================");
         prodService.showData();
+        
         out.println("\n\n=================== Accessories =======================");
         accessService.showData();
     }

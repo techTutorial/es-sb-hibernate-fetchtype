@@ -26,7 +26,7 @@ public class EsAccessoriesServices {
 		out.println("\n=====================Retrieve Accessories from Database:====================");
 		List<EsAccessoriesEntity> accessList = accessRepo.findAll();
 		out.println("\n=====================Print All Accessories on console:====================");
-        accessList.forEach(System.out::println);
+        accessList.forEach(out::println);
 	}
 	
 	

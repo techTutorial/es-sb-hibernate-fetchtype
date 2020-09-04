@@ -15,6 +15,7 @@ import com.javasampleapproach.hibernate.fetchtype.repository.EsProductRepository
 
 @Service
 public class EsProductServices {
+	
 	@Autowired
     EsProductRepository prodRepo;
 
@@ -27,7 +28,7 @@ public class EsProductServices {
 		out.println("\n=====================Retrieve Products from Database:====================");
 		List<EsProductEntity> prodList = prodRepo.findAll();
 		out.println("\n=====================Print All Products on console:====================");
-		prodList.forEach(System.out::println);;
+		prodList.forEach(out::println);;
 	}
 		
 	public void deleteAll(){
