@@ -33,33 +33,26 @@ public class EsAccessoriesEntity{
     
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "ID_PRODUCT")
-    private EsProductEntity prodEntity;
+    private EsProductEntity esProductEntity;
     
     public EsAccessoriesEntity(String name){
     	this.accessName = name;
     }
     
-    /*public EsAccessoriesEntity(String name, EsProductEntity prodEntity){
-    	this.accessName = name;
-    	this.prodEntity = prodEntity;
-    }*/
-    
-    // name
-    public String getName() {
+    public String getAccessName() {
         return accessName;
     }
     
-    public void setName(String name) {
-        this.accessName = name;
+    public void setAccessName(String accessName) {
+        this.accessName = accessName;
     }
     
-    // products
-    public void setProdEntity(EsProductEntity prodEntity){
-    	this.prodEntity = prodEntity;
+    public void setEsProductEntity(EsProductEntity esProductEntity){
+    	this.esProductEntity = esProductEntity;
     }
     
-    public EsProductEntity getProdEntity(){
-    	return this.prodEntity;
+    public EsProductEntity getEsProductEntity(){
+    	return this.esProductEntity;
     }
     
     public String toString(){
@@ -67,9 +60,9 @@ public class EsAccessoriesEntity{
         JSONObject jsonInfo = new JSONObject();
         jsonInfo.put("accessName",this.accessName);
 
-        if(this.getProdEntity() != null){
+        if(this.getEsProductEntity() != null){
         	JSONObject prodJsonObj = new JSONObject();
-            prodJsonObj.put("prodName", this.getProdEntity().getProdName());
+            prodJsonObj.put("prodName", this.getEsProductEntity().getProdName());
             jsonInfo.put("product", prodJsonObj);
             info = jsonInfo.toString();
         }

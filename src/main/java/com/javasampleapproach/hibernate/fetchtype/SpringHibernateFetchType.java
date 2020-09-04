@@ -50,11 +50,11 @@ public class SpringHibernateFetchType implements CommandLineRunner{
         EsProductEntity samsung = new EsProductEntity("Samsung");
         
         // set product for products
-        iphone7.setProdEntity(apple);
-        iPadPro.setProdEntity(apple);
+        iphone7.setEsProductEntity(apple);
+        iPadPro.setEsProductEntity(apple);
         
-        galaxyJ7.setProdEntity(samsung);
-        galaxyTabA.setProdEntity(samsung);
+        galaxyJ7.setEsProductEntity(samsung);
+        galaxyTabA.setEsProductEntity(samsung);
         
         // save products
         prodService.save(apple);

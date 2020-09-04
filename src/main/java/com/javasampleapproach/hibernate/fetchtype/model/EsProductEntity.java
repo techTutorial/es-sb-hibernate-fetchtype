@@ -34,19 +34,14 @@ public class EsProductEntity{
 	@Column(name="NAME_PRODUCT")
     private String prodName;
     
-	// mappedBy="prodEntity" is mandatory regardless of FOREIGN KEY definition in database
-	// without mappedBy="prodEntity", ConstraintViolationException OR Referential integrity constraint violation
-    @OneToMany(mappedBy="prodEntity", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+	// mappedBy="esProductEntity" is mandatory regardless of FOREIGN KEY definition in database
+	// without mappedBy="esProductEntity", ConstraintViolationException OR Referential integrity constraint violation
+    @OneToMany(mappedBy="esProductEntity", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
     private Set<EsAccessoriesEntity> products;
     
     public EsProductEntity(String name){
     	this.prodName = name;
     }
-    
-    /*public EsProductEntity(String name, Set<EsAccessoriesEntity> products){
-    	this.prodName = name;
-    	this.products = products;
-    }*/
     
     public String toString(){
     	String info = "";
@@ -57,7 +52,7 @@ public class EsProductEntity{
         if(this.getProducts() != null){
             this.getProducts().forEach(accessories->{
                 JSONObject subJson = new JSONObject();
-                subJson.put("accessName", accessories.getName());
+                subJson.put("accessName", accessories.getAccessName());
                 productArray.put(subJson);
             });
         }
