@@ -34,9 +34,8 @@ public class EsProductEntity{
 	@Column(name="NAME_PRODUCT")
     private String prodName;
     
-	// mappedBy="company" is mandatory regardless of FOREIGN KEY definition in database
-	// without mappedBy="company", ConstraintViolationException OR Referential integrity constraint violation
-	// illegal mappedBy="Company" OR "COMPANY" OR "COMPANY2"
+	// mappedBy="prodEntity" is mandatory regardless of FOREIGN KEY definition in database
+	// without mappedBy="prodEntity", ConstraintViolationException OR Referential integrity constraint violation
     @OneToMany(mappedBy="prodEntity", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
     private Set<EsAccessoriesEntity> products;
     
@@ -52,13 +51,13 @@ public class EsProductEntity{
     public String toString(){
     	String info = "";
         JSONObject jsonInfo = new JSONObject();
-        jsonInfo.put("name",this.prodName);
+        jsonInfo.put("prodName",this.prodName);
         
         JSONArray productArray = new JSONArray();
         if(this.getProducts() != null){
             this.getProducts().forEach(accessories->{
                 JSONObject subJson = new JSONObject();
-                subJson.put("name", accessories.getName());
+                subJson.put("accessName", accessories.getName());
                 productArray.put(subJson);
             });
         }

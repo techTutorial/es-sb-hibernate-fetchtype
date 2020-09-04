@@ -54,23 +54,23 @@ public class EsAccessoriesEntity{
     }
     
     // products
-    public void setCompany(EsProductEntity prodEntity){
+    public void setProdEntity(EsProductEntity prodEntity){
     	this.prodEntity = prodEntity;
     }
     
-    public EsProductEntity getCompany(){
+    public EsProductEntity getProdEntity(){
     	return this.prodEntity;
     }
     
     public String toString(){
     	String info = "";	
         JSONObject jsonInfo = new JSONObject();
-        jsonInfo.put("name",this.accessName);
+        jsonInfo.put("accessName",this.accessName);
 
-        if(this.getCompany() != null){
-        	JSONObject companyObj = new JSONObject();
-            companyObj.put("name", this.getCompany().getProdName());
-            jsonInfo.put("company", companyObj);
+        if(this.getProdEntity() != null){
+        	JSONObject prodJsonObj = new JSONObject();
+            prodJsonObj.put("prodName", this.getProdEntity().getProdName());
+            jsonInfo.put("product", prodJsonObj);
             info = jsonInfo.toString();
         }
         return info;

@@ -14,21 +14,21 @@ import com.javasampleapproach.hibernate.fetchtype.repository.EsProductRepository
 @Service
 public class EsProductServices {
 	@Autowired
-    EsProductRepository companyRepository;
+    EsProductRepository prodRepo;
 
-	public void save(EsProductEntity company){
-		companyRepository.save(company);
+	public void save(EsProductEntity prod){
+		prodRepo.save(prod);
 	}
 	
 	@Transactional
 	public void showData(){
 		System.out.println("=====================Retrieve Companies from Database:====================");
-		List<EsProductEntity> companyLst = companyRepository.findAll();
+		List<EsProductEntity> prodList = prodRepo.findAll();
 		System.out.println("=====================Show All Companies on console:====================");
-		companyLst.forEach(System.out::println);;
+		prodList.forEach(System.out::println);;
 	}
 		
 	public void deleteAll(){
-		companyRepository.deleteAll();
+		prodRepo.deleteAll();
 	}
 }
