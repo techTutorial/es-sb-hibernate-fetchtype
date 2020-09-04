@@ -27,7 +27,10 @@ public class Company{
 	@Column(name="NAME_COMPANY")
     private String name;
     
-    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	// mappedBy="company" is mandatory regardless of FOREIGN KEY definition in database
+	// without mappedBy="company", ConstraintViolationException OR Referential integrity constraint violation
+	// illegal mappedBy="Company" OR "COMPANY" OR "COMPANY2"
+    @OneToMany(mappedBy="company", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
     private Set<Product> products;
     
     public Company(){
