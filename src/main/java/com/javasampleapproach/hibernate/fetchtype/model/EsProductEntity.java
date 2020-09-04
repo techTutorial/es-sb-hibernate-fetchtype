@@ -1,5 +1,6 @@
 package com.javasampleapproach.hibernate.fetchtype.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -40,7 +41,7 @@ public class EsProductEntity{
     private Set<EsAccessoriesEntity> accessEntity;
     
     //@OneToMany(mappedBy="prodReviewEntity", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-    //private Set<EsReviewEntity> reviewEntity = new HashSet();
+    //private Set<EsReviewEntity> reviewEntity = new HashSet<>();
     
     public EsProductEntity(String name){
     	this.prodName = name;
@@ -60,6 +61,17 @@ public class EsProductEntity{
             });
         }
         jsonInfo.put("accessories", accessArray);
+        
+        /*JSONArray reviewArray = new JSONArray();
+        if(this.getReviewEntity() != null){
+            this.getReviewEntity().forEach(review -> {
+                JSONObject subJson = new JSONObject();
+                subJson.put("reviewStar", review.getReviewStar());
+                reviewArray.put(subJson);
+            });
+        }
+        jsonInfo.put("reviews", reviewArray);*/
+        
         info = jsonInfo.toString();
         return info;
     }

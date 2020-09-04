@@ -31,6 +31,7 @@ public class EsAccessoriesEntity{
 	@Column(name = "NAME_ACCESSORIES")
 	private String accessName;
     
+    //@ManyToOne(fetch = FetchType.LAZY)
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "ID_PRODUCT_ACCESSORIES")
     private EsProductEntity prodAccessEntity;
