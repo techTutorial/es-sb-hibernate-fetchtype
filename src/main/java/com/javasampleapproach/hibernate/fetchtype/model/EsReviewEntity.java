@@ -33,16 +33,16 @@ public class EsReviewEntity{
     
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "ID_PRODUCT_REVIEW")
-    private EsProductEntity esProductEntity;
+    private EsProductEntity prodReviewEntity;
     
     public String toString(){
     	String info = "";	
         JSONObject jsonInfo = new JSONObject();
         jsonInfo.put("reviewStar", this.reviewStar);
 
-        if(this.getEsProductEntity() != null){
+        if(this.getProdReviewEntity() != null){
         	JSONObject prodJsonObj = new JSONObject();
-            prodJsonObj.put("prodName", this.getEsProductEntity().getProdName());
+            prodJsonObj.put("prodName", this.getProdReviewEntity().getProdName());
             jsonInfo.put("product", prodJsonObj);
             info = jsonInfo.toString();
         }

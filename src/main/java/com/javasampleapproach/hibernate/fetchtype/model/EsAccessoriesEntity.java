@@ -33,7 +33,7 @@ public class EsAccessoriesEntity{
     
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "ID_PRODUCT_ACCESSORIES")
-    private EsProductEntity esProductEntity;
+    private EsProductEntity prodAccessEntity;
     
     public EsAccessoriesEntity(String name){
     	this.accessName = name;
@@ -47,12 +47,12 @@ public class EsAccessoriesEntity{
         this.accessName = accessName;
     }
     
-    public void setEsProductEntity(EsProductEntity esProductEntity){
-    	this.esProductEntity = esProductEntity;
+    public void setProdAccessEntity(EsProductEntity esProductEntity){
+    	this.prodAccessEntity = esProductEntity;
     }
     
-    public EsProductEntity getEsProductEntity(){
-    	return this.esProductEntity;
+    public EsProductEntity getProdAccessEntity(){
+    	return this.prodAccessEntity;
     }
     
     public String toString(){
@@ -60,9 +60,9 @@ public class EsAccessoriesEntity{
         JSONObject jsonInfo = new JSONObject();
         jsonInfo.put("accessName",this.accessName);
 
-        if(this.getEsProductEntity() != null){
+        if(this.getProdAccessEntity() != null){
         	JSONObject prodJsonObj = new JSONObject();
-            prodJsonObj.put("prodName", this.getEsProductEntity().getProdName());
+            prodJsonObj.put("prodName", this.getProdAccessEntity().getProdName());
             jsonInfo.put("product", prodJsonObj);
             info = jsonInfo.toString();
         }

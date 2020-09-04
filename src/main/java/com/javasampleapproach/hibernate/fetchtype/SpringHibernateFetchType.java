@@ -57,11 +57,11 @@ public class SpringHibernateFetchType implements CommandLineRunner{
         EsProductEntity prod21 = new EsProductEntity("PROD-21");
         
         // set product for products
-        access11.setEsProductEntity(prod11);
-        access12.setEsProductEntity(prod11);
+        access11.setProdAccessEntity(prod11);
+        access12.setProdAccessEntity(prod11);
         
-        access21.setEsProductEntity(prod21);
-        access22.setEsProductEntity(prod21);
+        access21.setProdAccessEntity(prod21);
+        access22.setProdAccessEntity(prod21);
         
         // save products
         prodService.save(prod11);
