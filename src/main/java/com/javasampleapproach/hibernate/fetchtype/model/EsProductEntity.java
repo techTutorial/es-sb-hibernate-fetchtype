@@ -43,10 +43,10 @@ public class EsProductEntity{
     	this.prodName = name;
     }
     
-    public EsProductEntity(String name, Set<EsAccessoriesEntity> products){
+    /*public EsProductEntity(String name, Set<EsAccessoriesEntity> products){
     	this.prodName = name;
     	this.products = products;
-    }
+    }*/
     
     public String toString(){
     	String info = "";

@@ -39,10 +39,10 @@ public class EsAccessoriesEntity{
     	this.accessName = name;
     }
     
-    public EsAccessoriesEntity(String name, EsProductEntity prodEntity){
+    /*public EsAccessoriesEntity(String name, EsProductEntity prodEntity){
     	this.accessName = name;
     	this.prodEntity = prodEntity;
-    }
+    }*/
     
     // name
     public String getName() {
