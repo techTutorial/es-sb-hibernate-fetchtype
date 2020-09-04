@@ -26,50 +26,50 @@ public class EsAccessoriesEntity{
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID_ACCESSORIES")
-	private int id;
+	private int accessId;
     
 	@Column(name = "NAME_ACCESSORIES")
-	private String name;
+	private String accessName;
     
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "ID_PRODUCT")
-    private EsProductEntity company;
+    private EsProductEntity prodEntity;
     
     public EsAccessoriesEntity(String name){
-    	this.name = name;
+    	this.accessName = name;
     }
     
-    public EsAccessoriesEntity(String name, EsProductEntity company){
-    	this.name = name;
-    	this.company = company;
+    public EsAccessoriesEntity(String name, EsProductEntity prodEntity){
+    	this.accessName = name;
+    	this.prodEntity = prodEntity;
     }
     
     // name
     public String getName() {
-        return name;
+        return accessName;
     }
     
     public void setName(String name) {
-        this.name = name;
+        this.accessName = name;
     }
     
     // products
-    public void setCompany(EsProductEntity company){
-    	this.company = company;
+    public void setCompany(EsProductEntity prodEntity){
+    	this.prodEntity = prodEntity;
     }
     
     public EsProductEntity getCompany(){
-    	return this.company;
+    	return this.prodEntity;
     }
     
     public String toString(){
     	String info = "";	
         JSONObject jsonInfo = new JSONObject();
-        jsonInfo.put("name",this.name);
+        jsonInfo.put("name",this.accessName);
 
         if(this.getCompany() != null){
         	JSONObject companyObj = new JSONObject();
-            companyObj.put("name", this.getCompany().getName());
+            companyObj.put("name", this.getCompany().getProdName());
             jsonInfo.put("company", companyObj);
             info = jsonInfo.toString();
         }

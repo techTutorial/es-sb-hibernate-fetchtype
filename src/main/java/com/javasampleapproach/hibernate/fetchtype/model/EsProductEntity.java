@@ -29,30 +29,30 @@ public class EsProductEntity{
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="ID_PRODUCT")
-	private int id;
+	private int prodId;
 	
 	@Column(name="NAME_PRODUCT")
-    private String name;
+    private String prodName;
     
 	// mappedBy="company" is mandatory regardless of FOREIGN KEY definition in database
 	// without mappedBy="company", ConstraintViolationException OR Referential integrity constraint violation
 	// illegal mappedBy="Company" OR "COMPANY" OR "COMPANY2"
-    @OneToMany(mappedBy="company", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+    @OneToMany(mappedBy="prodEntity", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
     private Set<EsAccessoriesEntity> products;
     
     public EsProductEntity(String name){
-    	this.name = name;
+    	this.prodName = name;
     }
     
     public EsProductEntity(String name, Set<EsAccessoriesEntity> products){
-    	this.name = name;
+    	this.prodName = name;
     	this.products = products;
     }
     
     public String toString(){
     	String info = "";
         JSONObject jsonInfo = new JSONObject();
-        jsonInfo.put("name",this.name);
+        jsonInfo.put("name",this.prodName);
         
         JSONArray productArray = new JSONArray();
         if(this.getProducts() != null){

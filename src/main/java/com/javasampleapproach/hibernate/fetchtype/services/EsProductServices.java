@@ -8,13 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.javasampleapproach.hibernate.fetchtype.model.EsProductEntity;
-import com.javasampleapproach.hibernate.fetchtype.repository.CompanyRepository;
+import com.javasampleapproach.hibernate.fetchtype.repository.EsProductRepository;
 
 
 @Service
 public class EsProductServices {
 	@Autowired
-    CompanyRepository companyRepository;
+    EsProductRepository companyRepository;
 
 	public void save(EsProductEntity company){
 		companyRepository.save(company);
