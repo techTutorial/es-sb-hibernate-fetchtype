@@ -7,15 +7,15 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.javasampleapproach.hibernate.fetchtype.model.EsAccessoriesEntity;
-import com.javasampleapproach.hibernate.fetchtype.repository.ProductRepository;
+import com.javasampleapproach.hibernate.fetchtype.repository.EsAccessoriesRepository;
 
 @Service
-public class ProductServices {
+public class EsAccessoriesServices {
 	@Autowired
-    ProductRepository productRepository;
+    EsAccessoriesRepository productRepository;
 	
-	public void save(EsAccessoriesEntity product){
-		productRepository.save(product);
+	public void save(EsAccessoriesEntity accessories){
+		productRepository.save(accessories);
 	}
 	
 	@Transactional

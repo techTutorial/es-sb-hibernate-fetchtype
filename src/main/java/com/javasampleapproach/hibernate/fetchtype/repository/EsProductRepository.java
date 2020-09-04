@@ -4,5 +4,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.javasampleapproach.hibernate.fetchtype.model.EsProductEntity;
 
-public interface CompanyRepository extends JpaRepository<EsProductEntity, Integer>{
+public interface EsProductRepository extends JpaRepository<EsProductEntity, Integer>{
 }

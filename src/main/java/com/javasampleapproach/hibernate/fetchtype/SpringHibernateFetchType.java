@@ -7,17 +7,17 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.javasampleapproach.hibernate.fetchtype.model.EsProductEntity;
 import com.javasampleapproach.hibernate.fetchtype.model.EsAccessoriesEntity;
-import com.javasampleapproach.hibernate.fetchtype.services.CompanyServices;
-import com.javasampleapproach.hibernate.fetchtype.services.ProductServices;
+import com.javasampleapproach.hibernate.fetchtype.services.EsProductServices;
+import com.javasampleapproach.hibernate.fetchtype.services.EsAccessoriesServices;
 
 
 @SpringBootApplication
 public class SpringHibernateFetchType implements CommandLineRunner{
 	@Autowired
-	CompanyServices companyService;
+	EsProductServices companyService;
 	
 	@Autowired
-	ProductServices productService;
+	EsAccessoriesServices accessoriesService;
 
  
     public static void main(String[] args) {
@@ -35,7 +35,7 @@ public class SpringHibernateFetchType implements CommandLineRunner{
     private void clearData(){
     	System.out.println("=================== Clear DATA =======================");
     	companyService.deleteAll();
-        productService.deleteAll();
+        accessoriesService.deleteAll();
     }
     
     private void saveData(){
@@ -56,22 +56,22 @@ public class SpringHibernateFetchType implements CommandLineRunner{
         galaxyJ7.setCompany(samsung);
         galaxyTabA.setCompany(samsung);
         
-        // save companies
+        // save products
         companyService.save(apple);
         companyService.save(samsung);
          
-        // save products
-        productService.save(iphone7);
-        productService.save(iPadPro);
+        // save accessories
+        accessoriesService.save(iphone7);
+        accessoriesService.save(iPadPro);
         
-        productService.save(galaxyJ7);
-        productService.save(galaxyTabA);
+        accessoriesService.save(galaxyJ7);
+        accessoriesService.save(galaxyTabA);
     }
     
     private void showData(){
     	System.out.println("=================== Show ALL Data =======================");
         companyService.showData();
-        productService.showData();
+        accessoriesService.showData();
     }
     
 }

@@ -18,10 +18,10 @@ public class EsAccessoriesEntity{
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "ID_PRODUCT")
+	@Column(name = "ID_ACCESSORIES")
 	private int id;
     
-	@Column(name = "NAME_PRODUCT")
+	@Column(name = "NAME_ACCESSORIES")
 	private String name;
     
     @ManyToOne(fetch = FetchType.EAGER)

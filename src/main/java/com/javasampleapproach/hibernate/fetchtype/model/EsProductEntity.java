@@ -70,9 +70,9 @@ public class EsProductEntity{
         
         JSONArray productArray = new JSONArray();
         if(this.getProducts() != null){
-            this.getProducts().forEach(product->{
+            this.getProducts().forEach(accessories->{
                 JSONObject subJson = new JSONObject();
-                subJson.put("name", product.getName());
+                subJson.put("name", accessories.getName());
                 productArray.put(subJson);
             });
         }
