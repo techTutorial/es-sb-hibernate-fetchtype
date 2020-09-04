@@ -5,8 +5,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.javasampleapproach.hibernate.fetchtype.model.Company;
-import com.javasampleapproach.hibernate.fetchtype.model.Product;
+import com.javasampleapproach.hibernate.fetchtype.model.EsProductEntity;
+import com.javasampleapproach.hibernate.fetchtype.model.EsAccessoriesEntity;
 import com.javasampleapproach.hibernate.fetchtype.services.CompanyServices;
 import com.javasampleapproach.hibernate.fetchtype.services.ProductServices;
 
@@ -40,14 +40,14 @@ public class SpringHibernateFetchType implements CommandLineRunner{
     
     private void saveData(){
     	System.out.println("=================== Save DATA =======================");
-    	Product iphone7 = new Product("Iphone 7");
-        Product iPadPro = new Product("IPadPro");
+    	EsAccessoriesEntity iphone7 = new EsAccessoriesEntity("Iphone 7");
+        EsAccessoriesEntity iPadPro = new EsAccessoriesEntity("IPadPro");
         
-        Product galaxyJ7 = new Product("GalaxyJ7");
-        Product galaxyTabA = new Product("GalaxyTabA");
+        EsAccessoriesEntity galaxyJ7 = new EsAccessoriesEntity("GalaxyJ7");
+        EsAccessoriesEntity galaxyTabA = new EsAccessoriesEntity("GalaxyTabA");
          
-        Company apple = new Company("Apple");
-        Company samsung = new Company("Samsung");
+        EsProductEntity apple = new EsProductEntity("Apple");
+        EsProductEntity samsung = new EsProductEntity("Samsung");
         
         // set company for products
         iphone7.setCompany(apple);

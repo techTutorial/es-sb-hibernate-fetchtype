@@ -17,7 +17,7 @@ import org.json.JSONObject;
 
 @Entity
 @Table(name="ES_PRODUCT")
-public class Company{
+public class EsProductEntity{
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -31,16 +31,16 @@ public class Company{
 	// without mappedBy="company", ConstraintViolationException OR Referential integrity constraint violation
 	// illegal mappedBy="Company" OR "COMPANY" OR "COMPANY2"
     @OneToMany(mappedBy="company", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-    private Set<Product> products;
+    private Set<EsAccessoriesEntity> products;
     
-    public Company(){
+    public EsProductEntity(){
     }
     
-    public Company(String name){
+    public EsProductEntity(String name){
     	this.name = name;
     }
     
-    public Company(String name, Set<Product> products){
+    public EsProductEntity(String name, Set<EsAccessoriesEntity> products){
     	this.name = name;
     	this.products = products;
     }
@@ -55,11 +55,11 @@ public class Company{
     }
     
     // products
-    public void setProducts(Set<Product> products){
+    public void setProducts(Set<EsAccessoriesEntity> products){
     	this.products = products;
     }
     
-    public Set<Product> getProducts(){
+    public Set<EsAccessoriesEntity> getProducts(){
     	return this.products;
     }
     

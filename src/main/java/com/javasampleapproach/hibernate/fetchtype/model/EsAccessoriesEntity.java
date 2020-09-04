@@ -14,7 +14,7 @@ import org.json.JSONObject;
 
 @Entity
 @Table(name="ES_ACCESSORIES")
-public class Product{
+public class EsAccessoriesEntity{
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,16 +26,16 @@ public class Product{
     
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "ID_COMPANY")
-    private Company company;
+    private EsProductEntity company;
     
-    public Product(){
+    public EsAccessoriesEntity(){
     }
     
-    public Product(String name){
+    public EsAccessoriesEntity(String name){
     	this.name = name;
     }
     
-    public Product(String name, Company company){
+    public EsAccessoriesEntity(String name, EsProductEntity company){
     	this.name = name;
     	this.company = company;
     }
@@ -50,11 +50,11 @@ public class Product{
     }
     
     // products
-    public void setCompany(Company company){
+    public void setCompany(EsProductEntity company){
     	this.company = company;
     }
     
-    public Company getCompany(){
+    public EsProductEntity getCompany(){
     	return this.company;
     }
     

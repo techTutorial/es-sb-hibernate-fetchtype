@@ -7,7 +7,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.javasampleapproach.hibernate.fetchtype.model.Company;
+import com.javasampleapproach.hibernate.fetchtype.model.EsProductEntity;
 import com.javasampleapproach.hibernate.fetchtype.repository.CompanyRepository;
 
 
@@ -16,14 +16,14 @@ public class CompanyServices {
 	@Autowired
     CompanyRepository companyRepository;
 
-	public void save(Company company){
+	public void save(EsProductEntity company){
 		companyRepository.save(company);
 	}
 	
 	@Transactional
 	public void showData(){
 		System.out.println("=====================Retrieve Companies from Database:====================");
-		List<Company> companyLst = companyRepository.findAll();
+		List<EsProductEntity> companyLst = companyRepository.findAll();
 		System.out.println("=====================Show All Companies on console:====================");
 		companyLst.forEach(System.out::println);;
 	}
