@@ -25,7 +25,7 @@ public class EsAccessoriesEntity{
 	private String name;
     
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "ID_COMPANY")
+    @JoinColumn(name = "ID_PRODUCT")
     private EsProductEntity company;
     
     public EsAccessoriesEntity(){

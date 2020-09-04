@@ -21,7 +21,7 @@ public class EsProductEntity{
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="ID_COMPANY")
+	@Column(name="ID_PRODUCT")
 	private int id;
 	
 	@Column(name="NAME_COMPANY")
