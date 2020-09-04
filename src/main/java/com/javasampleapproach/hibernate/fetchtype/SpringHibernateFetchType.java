@@ -15,6 +15,7 @@ import com.javasampleapproach.hibernate.fetchtype.services.EsAccessoriesServices
 
 @SpringBootApplication
 public class SpringHibernateFetchType implements CommandLineRunner{
+	
 	@Autowired
 	EsProductServices prodService;
 	
