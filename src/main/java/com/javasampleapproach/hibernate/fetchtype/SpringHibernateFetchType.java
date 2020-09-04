@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.javasampleapproach.hibernate.fetchtype.model.EsProductEntity;
 import com.javasampleapproach.hibernate.fetchtype.model.EsAccessoriesEntity;
 import com.javasampleapproach.hibernate.fetchtype.services.EsProductServices;
+import com.javasampleapproach.hibernate.fetchtype.services.EsReviewService;
 import com.javasampleapproach.hibernate.fetchtype.services.EsAccessoriesServices;
 
 
@@ -22,7 +23,10 @@ public class SpringHibernateFetchType implements CommandLineRunner{
 	@Autowired
 	EsAccessoriesServices accessService;
 
- 
+	@Autowired
+	EsReviewService reviewService;
+
+	
     public static void main(String[] args) {
     	SpringApplication.run(SpringHibernateFetchType.class, args);
     }
@@ -77,6 +81,9 @@ public class SpringHibernateFetchType implements CommandLineRunner{
         
         out.println("\n\n=================== Accessories =======================");
         accessService.showData();
+        
+        out.println("\n\n=================== Reviews =======================");
+        reviewService.showData();
     }
     
 }
