@@ -1,5 +1,7 @@
 package com.javasampleapproach.hibernate.fetchtype.services;
 
+import static java.lang.System.out;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,23 +13,25 @@ import com.javasampleapproach.hibernate.fetchtype.repository.EsAccessoriesReposi
 
 @Service
 public class EsAccessoriesServices {
+	
 	@Autowired
-    EsAccessoriesRepository productRepository;
+    EsAccessoriesRepository accessRepo;
 	
 	public void save(EsAccessoriesEntity accessories){
-		productRepository.save(accessories);
+		accessRepo.save(accessories);
 	}
 	
 	@Transactional
 	public void showData(){
-		System.out.println("=====================Retrieve Products from Database:====================");
-		List<EsAccessoriesEntity> productLst = productRepository.findAll();
-		System.out.println("=====================Show All Products on console:====================");
-        productLst.forEach(System.out::println);
+		out.println("\n=====================Retrieve Accessories from Database:====================");
+		List<EsAccessoriesEntity> accessList = accessRepo.findAll();
+		out.println("\n=====================Print All Accessories on console:====================");
+        accessList.forEach(System.out::println);
 	}
 	
 	
 	public void deleteAll(){
-		productRepository.deleteAll();
+		accessRepo.deleteAll();
 	}
+	
 }

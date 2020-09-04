@@ -48,15 +48,15 @@ public class EsProductEntity{
         JSONObject jsonInfo = new JSONObject();
         jsonInfo.put("prodName",this.prodName);
         
-        JSONArray productArray = new JSONArray();
+        JSONArray accessArray = new JSONArray();
         if(this.getProducts() != null){
             this.getProducts().forEach(accessories->{
                 JSONObject subJson = new JSONObject();
                 subJson.put("accessName", accessories.getAccessName());
-                productArray.put(subJson);
+                accessArray.put(subJson);
             });
         }
-        jsonInfo.put("products", productArray);
+        jsonInfo.put("accessories", accessArray);
         info = jsonInfo.toString();
         return info;
     }

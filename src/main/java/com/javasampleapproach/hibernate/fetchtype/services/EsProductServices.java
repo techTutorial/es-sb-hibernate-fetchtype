@@ -1,5 +1,7 @@
 package com.javasampleapproach.hibernate.fetchtype.services;
 
+import static java.lang.System.out;
+
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -22,9 +24,9 @@ public class EsProductServices {
 	
 	@Transactional
 	public void showData(){
-		System.out.println("=====================Retrieve Companies from Database:====================");
+		out.println("\n=====================Retrieve Products from Database:====================");
 		List<EsProductEntity> prodList = prodRepo.findAll();
-		System.out.println("=====================Show All Companies on console:====================");
+		out.println("\n=====================Print All Products on console:====================");
 		prodList.forEach(System.out::println);;
 	}
 		

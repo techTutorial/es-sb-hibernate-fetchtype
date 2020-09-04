@@ -1,5 +1,7 @@
 package com.javasampleapproach.hibernate.fetchtype;
 
+import static java.lang.System.out;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -33,13 +35,13 @@ public class SpringHibernateFetchType implements CommandLineRunner{
     }
     
     private void clearData(){
-    	System.out.println("=================== Clear DATA =======================");
+    	out.println("\n\n=================== Clear DATA =======================");
     	prodService.deleteAll();
         accessService.deleteAll();
     }
     
     private void saveData(){
-    	System.out.println("=================== Save DATA =======================");
+    	out.println("\n\n=================== Save DATA =======================");
     	EsAccessoriesEntity iphone7 = new EsAccessoriesEntity("Iphone 7");
         EsAccessoriesEntity iPadPro = new EsAccessoriesEntity("IPadPro");
         
@@ -69,8 +71,9 @@ public class SpringHibernateFetchType implements CommandLineRunner{
     }
     
     private void showData(){
-    	System.out.println("=================== Show ALL Data =======================");
+    	out.println("\n\n=================== Products =======================");
         prodService.showData();
+        out.println("\n\n=================== Accessories =======================");
         accessService.showData();
     }
     

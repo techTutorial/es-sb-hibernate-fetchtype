@@ -1,17 +1,17 @@
 
 insert into ES_PRODUCT (ID_PRODUCT, NAME_PRODUCT)
-values(1, 'Apple');
+values(1, 'PROD-01');
 insert into ES_PRODUCT (ID_PRODUCT, NAME_PRODUCT)
-values(2, 'Samsung');
+values(2, 'PROD-02');
 
 
 
 insert into ES_ACCESSORIES (ID_ACCESSORIES, NAME_ACCESSORIES, ID_PRODUCT)
-values(1, 'Iphone 7', 1);
+values(1, 'ACCESS-01', 1);
 insert into ES_ACCESSORIES (ID_ACCESSORIES, NAME_ACCESSORIES, ID_PRODUCT)
-values(2, 'IPadPro', 1);
+values(2, 'ACCESS-02', 1);
 insert into ES_ACCESSORIES (ID_ACCESSORIES, NAME_ACCESSORIES, ID_PRODUCT)
-values(3, 'GalaxyJ7', 2);
+values(3, 'ACCESS-03', 2);
 insert into ES_ACCESSORIES (ID_ACCESSORIES, NAME_ACCESSORIES, ID_PRODUCT)
-values(4, 'GalaxyTabA', 2);
+values(4, 'ACCESS-04', 2);
 
