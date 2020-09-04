@@ -32,7 +32,7 @@ public class EsAccessoriesEntity{
 	private String accessName;
     
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "ID_PRODUCT")
+    @JoinColumn(name = "ID_PRODUCT_ACCESSORIES")
     private EsProductEntity esProductEntity;
     
     public EsAccessoriesEntity(String name){
