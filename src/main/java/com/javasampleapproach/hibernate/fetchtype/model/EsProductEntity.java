@@ -15,8 +15,15 @@ import javax.persistence.Table;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
 @Table(name="ES_PRODUCT")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class EsProductEntity{
 	
 	@Id
@@ -24,7 +31,7 @@ public class EsProductEntity{
 	@Column(name="ID_PRODUCT")
 	private int id;
 	
-	@Column(name="NAME_COMPANY")
+	@Column(name="NAME_PRODUCT")
     private String name;
     
 	// mappedBy="company" is mandatory regardless of FOREIGN KEY definition in database
@@ -33,9 +40,6 @@ public class EsProductEntity{
     @OneToMany(mappedBy="company", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
     private Set<EsAccessoriesEntity> products;
     
-    public EsProductEntity(){
-    }
-    
     public EsProductEntity(String name){
     	this.name = name;
     }
@@ -43,24 +47,6 @@ public class EsProductEntity{
     public EsProductEntity(String name, Set<EsAccessoriesEntity> products){
     	this.name = name;
     	this.products = products;
-    }
-    
-    // name
-    public String getName() {
-        return name;
-    }
-    
-    public void setName(String name) {
-        this.name = name;
-    }
-    
-    // products
-    public void setProducts(Set<EsAccessoriesEntity> products){
-    	this.products = products;
-    }
-    
-    public Set<EsAccessoriesEntity> getProducts(){
-    	return this.products;
     }
     
     public String toString(){
@@ -80,4 +66,5 @@ public class EsProductEntity{
         info = jsonInfo.toString();
         return info;
     }
+    
 }

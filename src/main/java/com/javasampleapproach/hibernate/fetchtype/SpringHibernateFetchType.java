@@ -14,10 +14,10 @@ import com.javasampleapproach.hibernate.fetchtype.services.EsAccessoriesServices
 @SpringBootApplication
 public class SpringHibernateFetchType implements CommandLineRunner{
 	@Autowired
-	EsProductServices companyService;
+	EsProductServices prodService;
 	
 	@Autowired
-	EsAccessoriesServices accessoriesService;
+	EsAccessoriesServices accessService;
 
  
     public static void main(String[] args) {
@@ -34,8 +34,8 @@ public class SpringHibernateFetchType implements CommandLineRunner{
     
     private void clearData(){
     	System.out.println("=================== Clear DATA =======================");
-    	companyService.deleteAll();
-        accessoriesService.deleteAll();
+    	prodService.deleteAll();
+        accessService.deleteAll();
     }
     
     private void saveData(){
@@ -57,21 +57,21 @@ public class SpringHibernateFetchType implements CommandLineRunner{
         galaxyTabA.setCompany(samsung);
         
         // save products
-        companyService.save(apple);
-        companyService.save(samsung);
+        prodService.save(apple);
+        prodService.save(samsung);
          
         // save accessories
-        accessoriesService.save(iphone7);
-        accessoriesService.save(iPadPro);
+        accessService.save(iphone7);
+        accessService.save(iPadPro);
         
-        accessoriesService.save(galaxyJ7);
-        accessoriesService.save(galaxyTabA);
+        accessService.save(galaxyJ7);
+        accessService.save(galaxyTabA);
     }
     
     private void showData(){
     	System.out.println("=================== Show ALL Data =======================");
-        companyService.showData();
-        accessoriesService.showData();
+        prodService.showData();
+        accessService.showData();
     }
     
 }

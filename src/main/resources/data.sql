@@ -1,7 +1,7 @@
 
-insert into ES_PRODUCT (ID_PRODUCT, NAME_COMPANY)
+insert into ES_PRODUCT (ID_PRODUCT, NAME_PRODUCT)
 values(1, 'Apple');
-insert into ES_PRODUCT (ID_PRODUCT, NAME_COMPANY)
+insert into ES_PRODUCT (ID_PRODUCT, NAME_PRODUCT)
 values(2, 'Samsung');
 
 

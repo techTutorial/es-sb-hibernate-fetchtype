@@ -12,8 +12,15 @@ import javax.persistence.Table;
 
 import org.json.JSONObject;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
 @Table(name="ES_ACCESSORIES")
+//@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class EsAccessoriesEntity{
 	
 	@Id
@@ -27,9 +34,6 @@ public class EsAccessoriesEntity{
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "ID_PRODUCT")
     private EsProductEntity company;
-    
-    public EsAccessoriesEntity(){
-    }
     
     public EsAccessoriesEntity(String name){
     	this.name = name;
@@ -59,8 +63,7 @@ public class EsAccessoriesEntity{
     }
     
     public String toString(){
-    	String info = "";
-    	
+    	String info = "";	
         JSONObject jsonInfo = new JSONObject();
         jsonInfo.put("name",this.name);
 
@@ -70,7 +73,7 @@ public class EsAccessoriesEntity{
             jsonInfo.put("company", companyObj);
             info = jsonInfo.toString();
         }
-        
         return info;
     }
+    
 }
