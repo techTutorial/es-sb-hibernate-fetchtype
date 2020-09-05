@@ -18,9 +18,9 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name="ES_REVIEW")
-@Data
+//@Data
 @NoArgsConstructor
-@AllArgsConstructor
+//@AllArgsConstructor
 public class EsReviewEntity{
 	
 	@Id
@@ -34,6 +34,27 @@ public class EsReviewEntity{
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="ID_PRODUCT_REVIEW")
     private EsProductEntity prodReviewEntity;
+    
+	public EsReviewEntity(int reviewStar) {
+		super();
+		this.reviewStar = reviewStar;
+	}
+    
+	public int getReviewStar() {
+		return reviewStar;
+	}
+
+	public void setReviewStar(int reviewStar) {
+		this.reviewStar = reviewStar;
+	}
+
+	public EsProductEntity getProdReviewEntity() {
+		return prodReviewEntity;
+	}
+
+	public void setProdReviewEntity(EsProductEntity prodReviewEntity) {
+		this.prodReviewEntity = prodReviewEntity;
+	}
     
     //@Column
     //private String reviewComment;

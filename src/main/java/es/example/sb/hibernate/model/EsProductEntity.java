@@ -43,8 +43,8 @@ public class EsProductEntity{
     @OneToMany(mappedBy="prodAccessEntity", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
     private Set<EsAccessoriesEntity> accessEntity;
     
-    //@OneToMany(mappedBy="prodReviewEntity", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-    //private Set<EsReviewEntity> reviewEntity = new HashSet<>();
+    @OneToMany(mappedBy="prodReviewEntity", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    private Set<EsReviewEntity> reviewEntity = new HashSet<>();
     
     public EsProductEntity(String name){
     	this.prodName = name;
@@ -65,7 +65,7 @@ public class EsProductEntity{
         }
         jsonInfo.put("accessories", accessArray);
         
-        /*JSONArray reviewArray = new JSONArray();
+        JSONArray reviewArray = new JSONArray();
         if(this.getReviewEntity() != null){
             this.getReviewEntity().forEach(review -> {
                 JSONObject subJson = new JSONObject();
@@ -73,7 +73,7 @@ public class EsProductEntity{
                 reviewArray.put(subJson);
             });
         }
-        jsonInfo.put("reviews", reviewArray);*/
+        jsonInfo.put("reviews", reviewArray);
         
         info = jsonInfo.toString();
         return info;
