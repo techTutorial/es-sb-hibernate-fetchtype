@@ -12,7 +12,6 @@ import javax.persistence.Table;
 
 import org.json.JSONObject;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -20,7 +19,6 @@ import lombok.NoArgsConstructor;
 @Table(name="ES_REVIEW")
 //@Data
 @NoArgsConstructor
-//@AllArgsConstructor
 public class EsReviewEntity{
 	
 	@Id
@@ -34,11 +32,6 @@ public class EsReviewEntity{
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="ID_PRODUCT_REVIEW")
     private EsProductEntity prodReviewEntity;
-    
-	public EsReviewEntity(int reviewStar) {
-		super();
-		this.reviewStar = reviewStar;
-	}
     
 	public int getReviewStar() {
 		return reviewStar;
