@@ -35,8 +35,10 @@ public class EsProductEntity{
 	@Column(name="NAME_PRODUCT")
     private String prodName;
     
-	// without mappedBy="prodAccessEntity", NO complain but accessories details will be empty for ONLY product object.
-	// mappedBy="prodAccessEntity" has no dependency on FOREIGN KEY defined in database
+	// mappedBy="", NO complain without it but EsProductEntity, @ManyToOne, @JoinColumn are there
+	// without mappedBy, accessories details will be empty for ONLY product object.
+	// mappedBy="" has dependency on member variable EsProductEntity injected in Accessories bean;
+	// mappedBy="" has NO dependency on FOREIGN KEY defined in database
 	// For illegal value of mappedBy, ConstraintViolationException OR Referential integrity constraint violation
     @OneToMany(mappedBy="prodAccessEntity", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
     private Set<EsAccessoriesEntity> accessEntity;
