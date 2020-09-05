@@ -29,11 +29,14 @@ public class EsReviewEntity{
 	private int reviewId;
     
 	@Column(name = "STAR_REVIEW")
-	private String reviewStar;
+	private int reviewStar;
     
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "ID_PRODUCT_REVIEW")
+    @JoinColumn(name="ID_PRODUCT_REVIEW")
     private EsProductEntity prodReviewEntity;
+    
+    //@Column
+    //private String reviewComment;
     
     public String toString(){
     	String info = "";	
