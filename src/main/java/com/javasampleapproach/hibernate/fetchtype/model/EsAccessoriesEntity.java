@@ -31,8 +31,11 @@ public class EsAccessoriesEntity{
 	@Column(name = "NAME_ACCESSORIES")
 	private String accessName;
     
-    //@ManyToOne(fetch = FetchType.LAZY)
-    @ManyToOne(fetch = FetchType.EAGER)
+	// @ManyToOne: mandatory, MappingException is thrown after removing @ManyToOne.
+    @ManyToOne(fetch = FetchType.LAZY)
+    // @JoinColumn(name = "ID_PRODUCT_ACCESSORIES"): optional, without it, NO complain,
+    // but accessories details will be empty for both product and accessories object.
+    // @JoinColumn has no dependency on FOREIGN KEY defined in database
     @JoinColumn(name = "ID_PRODUCT_ACCESSORIES")
     private EsProductEntity prodAccessEntity;
     

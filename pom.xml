@@ -55,6 +55,7 @@
 			<scope>runtime</scope>
 		</dependency> -->
 
+		<!-- optional: represents data in JSON -->
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>

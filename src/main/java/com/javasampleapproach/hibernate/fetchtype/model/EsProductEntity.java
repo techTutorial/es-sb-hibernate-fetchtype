@@ -35,8 +35,9 @@ public class EsProductEntity{
 	@Column(name="NAME_PRODUCT")
     private String prodName;
     
-	// mappedBy="esProductEntity" is mandatory regardless of FOREIGN KEY definition in database
-	// without mappedBy="esProductEntity", ConstraintViolationException OR Referential integrity constraint violation
+	// without mappedBy="prodAccessEntity", NO complain but accessories details will be empty for ONLY product object.
+	// mappedBy="prodAccessEntity" has no dependency on FOREIGN KEY defined in database
+	// For illegal value of mappedBy, ConstraintViolationException OR Referential integrity constraint violation
     @OneToMany(mappedBy="prodAccessEntity", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
     private Set<EsAccessoriesEntity> accessEntity;
     
