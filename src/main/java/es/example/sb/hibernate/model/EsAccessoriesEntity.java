@@ -43,6 +43,7 @@ public class EsAccessoriesEntity{
     	this.accessName = name;
     }
     
+    // replacement of below getter-setter with lombok > StackOverflowError > Pending
     public String getAccessName() {
         return accessName;
     }

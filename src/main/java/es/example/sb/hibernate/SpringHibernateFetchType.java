@@ -34,7 +34,7 @@ public class SpringHibernateFetchType implements CommandLineRunner{
     
     @Override
     public void run(String... arg0) throws Exception {
-    	//clearData();
+    	//clearData(); // not working after enabling it
     	saveData();
     	showData();
     }
@@ -45,6 +45,7 @@ public class SpringHibernateFetchType implements CommandLineRunner{
         accessService.deleteAll();
     }
     
+    // Shift into repository class using static initialization block > Pending
     private void saveData(){
     	out.println("\n\n=================== Save DATA =======================");
     	EsAccessoriesEntity access11 = new EsAccessoriesEntity("ACCESS-11");

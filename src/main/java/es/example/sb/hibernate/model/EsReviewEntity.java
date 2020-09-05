@@ -33,6 +33,7 @@ public class EsReviewEntity{
     @JoinColumn(name="ID_PRODUCT_REVIEW")
     private EsProductEntity prodReviewEntity;
     
+    // replacement of below getter-setter with lombok > StackOverflowError > Pending
 	public int getReviewStar() {
 		return reviewStar;
 	}
