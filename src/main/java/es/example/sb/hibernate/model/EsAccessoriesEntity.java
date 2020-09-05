@@ -1,4 +1,4 @@
-package com.javasampleapproach.hibernate.fetchtype.model;
+package es.example.sb.hibernate.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

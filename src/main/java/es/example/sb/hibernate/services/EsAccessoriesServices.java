@@ -1,4 +1,4 @@
-package com.javasampleapproach.hibernate.fetchtype.services;
+package es.example.sb.hibernate.services;
 
 import static java.lang.System.out;
 
@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.javasampleapproach.hibernate.fetchtype.model.EsAccessoriesEntity;
-import com.javasampleapproach.hibernate.fetchtype.repository.EsAccessoriesRepository;
+import es.example.sb.hibernate.model.EsAccessoriesEntity;
+import es.example.sb.hibernate.repository.EsAccessoriesRepository;
 
 @Service
 public class EsAccessoriesServices {

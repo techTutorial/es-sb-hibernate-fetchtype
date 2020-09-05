@@ -1,4 +1,4 @@
-package com.javasampleapproach.hibernate.fetchtype;
+package es.example.sb.hibernate;
 
 import static java.lang.System.out;
 
@@ -7,11 +7,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.javasampleapproach.hibernate.fetchtype.model.EsProductEntity;
-import com.javasampleapproach.hibernate.fetchtype.model.EsAccessoriesEntity;
-import com.javasampleapproach.hibernate.fetchtype.services.EsProductServices;
-import com.javasampleapproach.hibernate.fetchtype.services.EsReviewService;
-import com.javasampleapproach.hibernate.fetchtype.services.EsAccessoriesServices;
+import es.example.sb.hibernate.model.EsAccessoriesEntity;
+import es.example.sb.hibernate.model.EsProductEntity;
+import es.example.sb.hibernate.services.EsAccessoriesServices;
+import es.example.sb.hibernate.services.EsProductServices;
+import es.example.sb.hibernate.services.EsReviewService;
 
 
 @SpringBootApplication

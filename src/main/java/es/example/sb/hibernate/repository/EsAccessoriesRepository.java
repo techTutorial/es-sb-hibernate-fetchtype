@@ -1,8 +1,8 @@
-package com.javasampleapproach.hibernate.fetchtype.repository;
+package es.example.sb.hibernate.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.javasampleapproach.hibernate.fetchtype.model.EsAccessoriesEntity;
+import es.example.sb.hibernate.model.EsAccessoriesEntity;
 
 public interface EsAccessoriesRepository extends JpaRepository<EsAccessoriesEntity, Integer>{
 }

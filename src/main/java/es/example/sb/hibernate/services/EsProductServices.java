@@ -1,4 +1,4 @@
-package com.javasampleapproach.hibernate.fetchtype.services;
+package es.example.sb.hibernate.services;
 
 import static java.lang.System.out;
 
@@ -9,8 +9,8 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.javasampleapproach.hibernate.fetchtype.model.EsProductEntity;
-import com.javasampleapproach.hibernate.fetchtype.repository.EsProductRepository;
+import es.example.sb.hibernate.model.EsProductEntity;
+import es.example.sb.hibernate.repository.EsProductRepository;
 
 
 @Service
