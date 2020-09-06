@@ -37,6 +37,7 @@ public class EsAccessoriesEntity{
     // but accessories details will be empty for both product and accessories object.
     // @JoinColumn has no dependency on FOREIGN KEY defined in database
     @JoinColumn(name="ID_PRODUCT_ACCESSORIES")
+    // instead of entity, try with member variable "private int prodAccessId;" > Pending
     private EsProductEntity prodAccessEntity;
     
     public EsAccessoriesEntity(String name){
@@ -60,6 +61,7 @@ public class EsAccessoriesEntity{
     	return this.prodAccessEntity;
     }
     
+    // optional: customize it like proper JSON > Pending;
     public String toString(){
     	String info = "";	
         JSONObject jsonInfo = new JSONObject();

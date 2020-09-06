@@ -31,6 +31,7 @@ public class EsReviewEntity{
     
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="ID_PRODUCT_REVIEW")
+    // instead of entity, try with member variable "private int prodReviewId;" > Pending
     private EsProductEntity prodReviewEntity;
     
     // replacement of below getter-setter with lombok > StackOverflowError > Pending
@@ -53,6 +54,8 @@ public class EsReviewEntity{
     //@Column
     //private String reviewComment;
     
+	
+	// optional: customize it like proper JSON > Pending;
     public String toString(){
     	String info = "";	
         JSONObject jsonInfo = new JSONObject();
