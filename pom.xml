@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.javasampleapproach.hibernate.fetchtype</groupId>
+	<groupId>es.example.sb.hibernate</groupId>
 	<artifactId>es-sb-hibernate</artifactId>
 	<version>0.0.1</version>
 	<packaging>jar</packaging>
@@ -25,6 +25,9 @@
 	</properties>
 
 	<dependencies>
+		
+		<!-- Following hibernate libraries are present without any hibernate dependency -->
+		<!-- hibernate-jpa-2.1-api-1.jar, hibernate-commons-annotations-5.jar, hibernate-validator-6.jar -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
